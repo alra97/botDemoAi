@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PlayAI Customized Embed</title>
+
+    <!-- Link to external font or stylesheet (optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- PlayAI Embed Script -->
+    <script type="text/javascript" src="https://unpkg.com/@play-ai/web-embed"></script>
+    <script type="text/javascript">
+        // Open PlayAI widget on page load
+        addEventListener("load", () => {
+            PlayAI.open('eXGXHEJNmfF4Js_vWjFoq', {
+                theme: {
+                    color: '#007BFF',
+                    background: '#F0F8FF',
+                    fontColor: '#333333',
+                    fontFamily: 'Roboto, sans-serif',
+                    buttonColor: '#FF5733',
+                    buttonText: 'Let\'s Chat!',
+                    borderRadius: '10px'
+                },
+                welcomeMessage: 'Hello! How can I assist you today?',
+                language: 'en',
+            });
+        });
+    </script>
+
+    <!-- Custom CSS for your page -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #001f3f; /* Dark blue background */
+            color: #fff; /* White text for contrast */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Arrange items vertically */
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent background for a subtle effect */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #FF5733; /* Title color */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #FFF; /* Text color */
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .start-chat {
+            background-color: #FF5733;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px; /* Space below the button */
+        }
+
+        .start-chat:hover {
+            background-color: #e0482c;
+        }
+
+        /* Video container styling */
+        .video-container {
+            display: flex;
+            gap: 20px; /* Space between videos */
+            margin-top: 20px; /* Space above the video container */
+            overflow-x: auto; /* Enable horizontal scrolling if needed */
+            padding: 10px; /* Padding inside the video container */
+        }
+
+        video {
+            width: 300px; /* Fixed width for each video */
+            border-radius: 10px;
+            background-color: black; /* Background for video element */
+        }
+
+        /* Text below videos */
+        .video-text {
+            color: #FFF; /* Text color */
+            font-size: 1rem;
+            margin-top: 5px; /* Space above the text */
+        }
+
+        /* Watermark styling */
+        .watermark {
+            margin-top: 20px; /* Space above the watermark */
+            color: rgba(255, 255, 255, 0.5); /* Semi-transparent white text */
+            font-size: 0.9rem; /* Slightly smaller font size */
+        }
+
+        /* Position the PlayAI assistant */
+        .playai-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px; /* Adjust width of the widget */
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="start-chat" onclick="PlayAI.open('eXGXHEJNmfF4Js_vWjFoq')">AI ASSISTANTS MADE EASY</button>
+        <h1>Glam up, Your Fashion Girlie is in Town!</h1>
+        <p>Click on the mic to start chatting with her.</p>
+        
+        <!-- Scrollable video container -->
+        <div class="video-container">
+            <div>
+                <video controls>
+                    <source src="aiBot1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-text">Voice Assistant Demo from Play.AI</div>
+            </div>
+            <div>
+                <video controls>
+                    <source src="aiBot2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-text">Speech-To-Text Assistant Demo from Voiceflow</div>
+            </div>
+        </div>
+
+        <!-- Watermark -->
+        <div class="watermark">Alethea Rangayya</div>
+    </div>
+    
+    <!-- PlayAI Widget -->
+    <div class="playai-widget"></div>
+</body>
+</html>
